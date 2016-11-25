@@ -1,0 +1,12 @@
+behavior MovingRect(x y) {
+    set("x" add(x 1))
+    set("y" add(y 1))
+}
+component MyRect(x y) behavesas MovingRect(x y) {
+    Rectangle(x y 64 64 "black")
+    Circle(add(x 128) y 64 "black")
+}
+component Main() {
+    Window(1024 768)
+    MyRect(0 0 64 64 "black")
+}
